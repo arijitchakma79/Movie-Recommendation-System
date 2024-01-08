@@ -40,8 +40,8 @@ def stem(text):
     return string
 
 def load_data():
-    credits = pd.read_csv('tmdb_5000_credits.csv')
-    movies = pd.read_csv('tmdb_5000_movies.csv')
+    credits = pd.read_csv('./dataset/tmdb_5000_credits.csv')
+    movies = pd.read_csv('./dataset/tmdb_5000_movies.csv')
 
     movies = movies.merge(credits, on='title')
     movies = movies[['movie_id', 'title', 'cast', 'crew', 'genres', 'overview', 'keywords']]
