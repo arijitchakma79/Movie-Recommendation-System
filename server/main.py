@@ -2,9 +2,12 @@ from recommender import Recommender
 
 import json
 from flask import Flask, jsonify, request
+from flask_cors import CORS 
+
 
 recommender = Recommender()
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def movies_by_name():
